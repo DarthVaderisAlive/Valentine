@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Valentine 💖</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: url('https://www.dropbox.com/scl/fi/vrsbxmrbw6b1soqnauhi5/2022_08_30_16_40_IMG_2794.JPG?rlkey=6hw9fu20mckilsfqwi8txjozj&st=6vs72crx&dl=1') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
+      z-index: -1;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-top: 2rem;
+      position: relative;
+    }
+    p {
+      font-size: 1.5rem;
+      margin: 1rem auto;
+      max-width: 600px;
+      line-height: 1.6;
+      position: relative;
+    }
+    .countdown {
+      font-size: 2rem;
+      margin: 2rem 0;
+      position: relative;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 2rem auto;
+      max-width: 800px;
+      position: relative;
+    }
+    .gallery .photo {
+      width: 180px;
+      text-align: center;
+    }
+    .gallery img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 5px solid #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+    .gallery .caption {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #fff;
+    }
+    .photo-frame {
+      width: 150px;
+      height: 150px;
+      border: 5px solid #fff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .photo-frame .text {
+      font-size: 1.2rem;
+      text-align: center;
+      color: #fff;
+    }
+    footer {
+      margin: 2rem 0;
+      font-size: 1rem;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <h1>To My Forever Valentine 💕</h1>
+  <p>
+    Yasourty el meziena,<br><br>
+    Na3raf eli so3bet 3lik taw, walit t7es f rou7ek wa7dek w ma 3edch t7es b nafs el 7anen.<br>
+    Jit ba7dhek periode s8ira w 3aedt mchit 3lik yomken athret fik bel 5aeyb, n7ebek ta3raf 7eja ya rou7i, raho mahma isir binetna 3omri ma bech nsallam fik w ela f 7obna.<br><br>
+    7abitek w 3cha9tek w tmainitek laya w hetha l koll sar 79i9a ma 3edch najm nsallam fik taw w ella n3ich bla bik.<br>
+    3ersna 9rib w ba3d el 3ers ma 3edch fama nhar t3icho blech bya dima b janbek, sendek, wa9ef m3k f el behi 9bal el 5ayeb w aham 7eja MAB3ADHNA.<br><br>
+    N7ebek ya a8laa ma 3andi w 7adhar rou7k l a7san saint valentine!!!!! 💖
+  </p>
+
+  <div class="countdown">
+    <p>Countdown to Valentine's Day 2025:</p>
+    <p id="timer">Loading...</p>
+  </div>
+
+  <div class="gallery">
+    <!-- Photo 1 -->
+    <div class="photo">
+      <img src="https://www.dropbox.com/scl/fi/me6nr325sjzo7nbusvf5x/2022_04_25_14_32_IMG_0513.JPG?rlkey=t798rwt7sevdu9vb83yqeicgw&st=5f7fhnd0&dl=1" alt="Our Memory 1">
+      <div class="caption">Us as Friends</div>
+    </div>
+
+    <!-- Photo 2 -->
+    <div class="photo">
+      <img src="https://www.dropbox.com/scl/fi/zteg1tz3jkl1coly5qxj0/2022_07_02_04_03_IMG_1746.JPG?rlkey=ab1rf0bceamgfp8uus459e2k6&st=jck5ghlv&dl=1" alt="Our Memory 2">
+      <div class="caption">The first time you said YES to us!</div>
+    </div>
+
+    <!-- Photo 3 -->
+    <div class="photo">
+      <img src="https://www.dropbox.com/scl/fi/8r6gpplefkd6zf8vzgcz8/2022_08_11_17_16_IMG_2535.JPG?rlkey=9tlv4q8w0gcauur6jqt16rbj4&st=o2hfxn6n&dl=1" alt="Our Memory 3">
+      <div class="caption">Your mom said YES</div>
+    </div>
+
+    <!-- Photo 4 -->
+    <div class="photo">
+      <img src="https://www.dropbox.com/scl/fi/f529q77b6cdfe8nx16e8o/2023_05_05_16_24_IMG_4846.JPG?rlkey=nzstqj9amy1058bvy48c6s4py&st=nmba2e2w&dl=1" alt="Our Memory 4">
+      <div class="caption">My fav photo with you</div>
+    </div>
+
+    <!-- Photo 5 -->
+    <div class="photo">
+      <img src="https://www.dropbox.com/scl/fi/ez5fms4fvq17hb4c4r50y/3R8A1523.JPG?rlkey=pvo5ddehv69cu818b7sjb5red&st=e6ttb62u&dl=1" alt="Our Memory 5">
+      <div class="caption">We got engaged!</div>
+    </div>
+
+    <!-- Photo 6 -->
+    <div class="photo">
+      <img src="https://www.dropbox.com/scl/fi/rfjx5kpwf874qnb0ovoft/IMG_2225.jpg?rlkey=gz8ns2odb1lpfype8aq3fhj4s&st=7xayqnth&dl=1" alt="Our Memory 6">
+      <div class="caption">Just me and you</div>
+    </div>
+
+    <!-- Photo Frame 7 -->
+    <div class="photo">
+      <div class="photo-frame">
+        <div class="text">
+          1-7-2025<br>
+          Another memory<br>to be saved soon
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Made with 💖</p>
+  </footer>
+
+  <!-- Optional: Add a background song -->
+  <audio autoplay loop>
+    <source src="romantic-song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Set the target date to Valentine's Day 2025 (February 14, 2025)
+    const valentinesDay = new Date("February 14, 2025 00:00:00").getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = valentinesDay - now;
+
+      // Calculate days, hours, minutes, and seconds
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the countdown
+      document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      // If the countdown is over, display a message
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("timer").innerHTML = "Happy Valentine's Day, my love! 💖";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
