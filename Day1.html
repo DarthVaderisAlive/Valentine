@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riddle Time!</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: url('https://www.dropbox.com/scl/fi/vrsbxmrbw6b1soqnauhi5/2022_08_30_16_40_IMG_2794.JPG?rlkey=6hw9fu20mckilsfqwi8txjozj&st=6vs72crx&dl=1') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      min-height: 100vh;
+    }
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-top: 2rem;
+      position: relative;
+    }
+    p {
+      font-size: 1.5rem;
+      margin: 1rem auto;
+      max-width: 600px;
+      line-height: 1.6;
+      position: relative;
+    }
+    .countdown {
+      font-size: 2rem;
+      margin: 2rem 0;
+      position: relative;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 2rem auto;
+      max-width: 800px;
+      position: relative;
+    }
+    .gallery .photo {
+      width: 180px;
+      text-align: center;
+    }
+    .gallery img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 5px solid #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+    .gallery .caption {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #fff;
+    }
+    .photo-frame {
+      width: 150px;
+      height: 150px;
+      border: 5px solid #fff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .photo-frame .text {
+      font-size: 1.2rem;
+      text-align: center;
+      color: #fff;
+    }
+    footer {
+      margin: 2rem 0;
+      font-size: 1rem;
+      position: relative;
+    }
+    .play-button {
+      background-color: #ff6f61;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .play-button:hover {
+      background-color: #ff3b2f;
+    }
+    .lyrics {
+      font-size: 1.2rem;
+      margin: 1rem auto;
+      line-height: 1.6;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .lyrics.visible {
+      opacity: 1;
+    }
+    .riddle-line {
+      font-size: 1.5rem;
+      margin: 2rem auto;
+      max-width: 600px;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .riddle-line.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Riddle Time!</h1>
+  <p>
+    Na3raf eli enti t7eb el suspence, haka 3leh bech n5alik t5adam mo5ek bech ta3raf chnya el 7keya.
+  </p>
+
+  <div class="countdown">
+    <p>Countdown to Valentine's Day 2025:</p>
+    <p id="timer">Loading...</p>
+  </div>
+
+  <!-- Lyrics Container -->
+  <div id="lyrics-container"></div>
+
+  <!-- Riddle Line -->
+  <div id="riddle-line" class="riddle-line">We lay entwined, hearts racing, words at bay.</div>
+
+  <!-- Play Button -->
+  <button class="play-button" onclick="startExperience()">Begin Our Moment 🎶</button>
+
+  <!-- Audio Element (Updated with the correct song URL) -->
+  <audio id="song" src="https://www.dropbox.com/scl/fi/4qm38wvi9aov5lml7u5zl/Elvis-Presley-Can-t-Help-Falling-in-Love-Official-Lyric-Video.wav?rlkey=abk8dc1oyeywjsclwe0cvi3hh&st=gciin72u&dl=1"></audio>
+
+  <footer>
+    <p>Made with 💖 by [Your Name]</p>
+  </footer>
+
+  <script>
+    // Set the target date to Valentine's Day 2025 (February 14, 2025)
+    const valentinesDay = new Date("February 14, 2025 00:00:00").getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = valentinesDay - now;
+
+      // Calculate days, hours, minutes, and seconds
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the countdown
+      document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      // If the countdown is over, display a message
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("timer").innerHTML = "Happy Valentine's Day, my love! 💖";
+      }
+    }, 1000);
+
+    // Lyrics and song synchronization
+    async function startExperience() {
+      const song = document.getElementById('song');
+      const lyricsContainer = document.getElementById('lyrics-container');
+      const riddleLine = document.getElementById('riddle-line');
+      const playButton = document.querySelector('.play-button');
+
+      // Hide the play button
+      playButton.style.display = 'none';
+
+      // Updated lyrics data with YOUR TIMESTAMPS
+      const lyrics = [
+        { time: 0.000, text: "Take my hand" },              // Starts at 0.000s
+        { time: 6.427, text: "Take my whole life too" },     // Starts at 6.427s
+        { time: 14.242, text: "For I" },                     // Starts at 14.242s
+        { time: 16.106, text: "can't" },                     // Starts at 16.106s
+        { time: 17.892, text: "help" },                      // Starts at 17.892s
+        { time: 19.558, text: "falling in love" },           // Starts at 19.558s
+        { time: 23.089, text: "with you" }                   // Starts at 23.089s
+      ];
+
+      // Play the song
+      song.play();
+
+      // Show lyrics at specific times
+      lyrics.forEach(line => {
+        setTimeout(() => {
+          const lyricElement = document.createElement('div');
+          lyricElement.className = 'lyrics';
+          lyricElement.textContent = line.text;
+          lyricsContainer.appendChild(lyricElement);
+          setTimeout(() => lyricElement.classList.add('visible'), 10);
+        }, line.time * 1000); // Convert seconds to milliseconds
+      });
+
+      // Show riddle line when the song ends (about 27.929s)
+      song.onended = () => {
+        riddleLine.classList.add('visible');
+      };
+    }
+  </script>
+</body>
+</html>
